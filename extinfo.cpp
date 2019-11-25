@@ -9,7 +9,7 @@
 #endif
 
 #ifdef _UNIX
-#include "uowners.cpp"
+//#include "uowners.cpp"
 #ifdef SAVE_LINKS
 #include "ulinks.cpp"
 #endif
@@ -27,8 +27,8 @@ void SetExtraInfo20(CommandData *Cmd,Archive &Arc,wchar *Name)
   {
 #ifdef _UNIX
     case UO_HEAD:
-      if (Cmd->ProcessOwners)
-        ExtractUnixOwner20(Arc,Name);
+//      if (Cmd->ProcessOwners)
+//        ExtractUnixOwner20(Arc,Name);
       break;
 #endif
 #ifdef _WIN_ALL
@@ -49,9 +49,9 @@ void SetExtraInfo20(CommandData *Cmd,Archive &Arc,wchar *Name)
 void SetExtraInfo(CommandData *Cmd,Archive &Arc,wchar *Name)
 {
 #ifdef _UNIX
-  if (!Cmd->Test && Cmd->ProcessOwners && Arc.Format==RARFMT15 &&
-      Arc.SubHead.CmpName(SUBHEAD_TYPE_UOWNER))
-    ExtractUnixOwner30(Arc,Name);
+//  if (!Cmd->Test && Cmd->ProcessOwners && Arc.Format==RARFMT15 &&
+//      Arc.SubHead.CmpName(SUBHEAD_TYPE_UOWNER))
+//    ExtractUnixOwner30(Arc,Name);
 #endif
 #ifdef _WIN_ALL
   if (!Cmd->Test && Cmd->ProcessOwners && Arc.SubHead.CmpName(SUBHEAD_TYPE_ACL))
@@ -66,8 +66,8 @@ void SetExtraInfo(CommandData *Cmd,Archive &Arc,wchar *Name)
 void SetFileHeaderExtra(CommandData *Cmd,Archive &Arc,wchar *Name)
 {
 #ifdef _UNIX
-   if (Cmd->ProcessOwners && Arc.Format==RARFMT50 && Arc.FileHead.UnixOwnerSet)
-     SetUnixOwner(Arc,Name);
+//   if (Cmd->ProcessOwners && Arc.Format==RARFMT50 && Arc.FileHead.UnixOwnerSet)
+//     SetUnixOwner(Arc,Name);
 #endif
 }
 

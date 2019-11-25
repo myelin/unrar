@@ -1,3 +1,20 @@
+Notes from Phillip Pearson (http://myelin.nz/) --
+
+- This is forked from https://github.com/pmachapman/unrar and verified
+  to be identical to the 5.8.4 source archive linked from
+  https://www.rarlab.com/rar_add.htm (aside from the .gitignore that
+  I've added).
+
+- I've modified the makefile and code to produce a static unrar
+  binary, which should hopefully be suitable for upload to services
+  like Google Cloud Functions and Google App Engine that provide a
+  general execution environment but don't allow you to run 'apt-get
+  install unrar'.
+
+Enjoy!
+
+--- readme.txt from upstream archive follows ---
+
 
                        Portable UnRAR version
 
